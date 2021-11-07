@@ -16,13 +16,13 @@
 
 ## Usage
 
-## `yarn install or npm install`
+### `yarn install or npm install`
 
-## `yarn start or npm start`
+### `yarn start or npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000)
 
-## `yarn build or npm run build`
+### `yarn build or npm run build`
 
 Builds the app for production to the `build` folder.<br>
