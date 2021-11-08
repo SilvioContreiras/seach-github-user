@@ -1,11 +1,11 @@
 import React from 'react';
 
+import Search from './pages/Search';
 import GlobalStyles from './styles';
 
 const App: React.FC = () => (
   <>
-    <p>App Searc</p>
-
+    <Search/>
     <GlobalStyles />
   </>
 );
