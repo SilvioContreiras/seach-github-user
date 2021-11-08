@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import backgroundImage from '../assets/git-bg.png';
+import backgroundImage from '../assets/bg.png';
 
 export default createGlobalStyle`
   * {
@@ -15,7 +15,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #F2F2FA url(${backgroundImage}) no-repeat 80% top;
+    background: #F2F2FA url(${backgroundImage}) no-repeat 50% 5%;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -24,7 +24,11 @@ export default createGlobalStyle`
   }
 
   #root {
-    max-width: 970px;
+    max-width: 570px;
     padding: 40px 20px;
+    margin: 0 auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 `;
