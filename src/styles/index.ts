@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import backgroundImage from '../assets/git-bg.png';
+
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -13,6 +15,7 @@ export default createGlobalStyle`
   }
 
   body {
+    background: #F2F2FA url(${backgroundImage}) no-repeat 80% top;
     -webkit-font-smoothing: antialiased;
   }
 
