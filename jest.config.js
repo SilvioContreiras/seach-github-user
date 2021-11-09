@@ -13,7 +13,7 @@ module.exports = {
   // when using React Testing Library and adds special
   // extended assertions to Jest
   setupFilesAfterEnv: [
-    "@testing-library/react/cleanup-after-each",
+    // "@testing-library/react/cleanup-after-each",
     "@testing-library/jest-dom/extend-expect"
   ],
 
@@ -21,6 +21,15 @@ module.exports = {
   // Matches parent folder `__tests__` and filename
   // should contain `test` or `spec`.
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+
+  // globals: {
+  //   "ts-jest": {
+  //     tsConfig: "tsconfig.json",
+  //     diagnostics: false
+  //   }
+  // },
+  testEnvironment: "jsdom",
+  // preset: "ts-jest",
 
   // Module file extensions for importing
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
