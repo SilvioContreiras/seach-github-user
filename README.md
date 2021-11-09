@@ -1,6 +1,6 @@
 # Github Finder
 
-> React app to search for Github users and display their information. This app uses the Context API along for state management and is part of the LovelyStay challenge.
+> React app to search for Github users and display their information. This app is part of the LovelyStay challenge.
 
 ## The challenge consist of two pages
 
