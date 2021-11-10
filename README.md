@@ -1,8 +1,8 @@
 # Github Finder
 
-> React app to search for Github users and display their information. This app uses the Context API along for state management and is part of the LovelyStay challenge.
+> React app to search for Github users and display their information. This app is part of the LovelyStay challenge.
 
-# The challenge consist of two pages
+## The challenge consist of two pages
 
 * The search page: It needs to have at least one input to type the Github username you want to search for and a button that will trigger the search;
 
@@ -18,11 +18,11 @@
 
 ### `yarn install or npm install`
 
-### `yarn star or npm start`
+### `yarn start or npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000)
 
-### `npm run build`
+### `yarn build or npm run build`
 
 Builds the app for production to the `build` folder.<br>
