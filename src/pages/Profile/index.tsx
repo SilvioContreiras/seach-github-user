@@ -62,7 +62,7 @@ const Profile: React.FC = () => {
         <li>Repositories: <span>{profileData.public_repos}</span></li>
         <li>Followers: <span>{profileData.followers}</span></li>
         <li>Following: <span>{profileData.following}</span></li>
-        <li>user name: <span>{profileData.login}</span></li>
+        <li>Login: <span>{profileData.login}</span></li>
       </ul>
 
     </RepositoryInfo>
