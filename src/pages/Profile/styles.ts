@@ -16,8 +16,10 @@ export const Header = styled.header`
       color: #666;
     }
 
-    svg {
-      margin-right: 4px;
-    }
   }
-`;
+
+  img {
+    width: 20%;
+    margin-right: 4px;
+  }
+  `;

@@ -1,4 +1,5 @@
 import React, {FormEvent, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Title, Form } from './styles';
 
 import { api } from "../../services/api";
@@ -15,8 +16,10 @@ interface Repository {
   };
 }
 
+
 const Search: React.FC = () => {
 const [userName, setUserName] = useState('');
+const history = useHistory();
 
   const [profileData, setProfileData] = useState<Repository | void>(() => {
     const localData = localStorage.getItem('userData');
@@ -39,8 +42,10 @@ const [userName, setUserName] = useState('');
     try {
        await api.get<Repository>(`users/${userName}`).then(response => {
         if(response.data) {
-          setProfileData(response.data)
-          setUserName("")
+          setProfileData(response.data);
+          setUserName("");
+
+          history.push('/profile')
         }
       })
 

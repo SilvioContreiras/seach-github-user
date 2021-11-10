@@ -4,7 +4,8 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 import { Header } from './styles'
 import { api } from "../../services/api";
-import logo from '../../assets/logo-github.svg'
+import logo from '../../assets/github-icon.jpg';
+
 interface RepositoryParams {
   repository: string;
 }
@@ -32,21 +33,29 @@ interface Issue {
 const Profile: React.FC = () => {
   const [repository, setRepository] = useState<Repository | null>(null);
 
-const { params } = useRouteMatch<RepositoryParams>();
+   const [profileData] = useState<Repository | void>(() => {
+    const localData = localStorage.getItem('userData');
 
-  useEffect(() => {
-    api.get(`repos/${params.repository}`).then(({ data }) => {
-      setRepository(data)
-    })
-  }, []);
+    if(localData) {
+      return JSON.parse(localData);
+    }
 
+    return [];
+  });
 
   return (
     <>
     <Header>
+      <Link to="/">
       <img src={logo} alt="git logo" />
+
+      </Link>
+
+      <Link to="/">
+        Voltar
+      </Link>
     </Header>
-      <p>Search</p>
+    <p>Search</p>
 
     </>
   )
