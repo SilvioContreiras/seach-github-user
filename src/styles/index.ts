@@ -15,7 +15,6 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #F2F2FA url(${backgroundImage}) no-repeat 50% 5%;
     -webkit-font-smoothing: antialiased;
   }
 

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
 export const Title = styled.h1`
-  color: #fff;
+  color: #08155e;
   font-size: 25px;
   font-weight: 500;
   line-height: 55px;
@@ -22,7 +22,7 @@ export const Form = styled.form`
     border-radius: 4px 0 0 4px;
     padding: 0 10px;
     color: #3a3a3a;
-    border: 1px solid #0000003b;
+    border: 1px solid #00000087;
     border-right: 0;
 
     &::placeholder {
@@ -34,7 +34,7 @@ export const Form = styled.form`
   button {
     width: 150px;
     height: 40px;
-    background: #03082499;
+    background: #08155e;
     border-radius: 0 4px 4px 0;
     border: 0;
     color: #fff;
@@ -42,8 +42,7 @@ export const Form = styled.form`
     transition: 0.2s;
 
     &:hover {
-    background: ${shade(0.3, '#03082499')};
+    background: ${shade(0.3, '#08155e')};
   }
-
   }
 `

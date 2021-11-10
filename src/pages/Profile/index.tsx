@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { useRouteMatch, Link } from 'react-router-dom';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiChevronLeft } from 'react-icons/fi';
 
-import { Header } from './styles'
-import { api } from "../../services/api";
+import { Header, RepositoryInfo } from './styles'
 import logo from '../../assets/github-icon.jpg';
 
-interface RepositoryParams {
-  repository: string;
-}
-
 interface Repository {
-  fullName: string;
+  name: string;
   description: string;
   stargazers_count: number;
   forks_count: number;
   open_issues_count: number;
-  owner: {
-    login: string;
-    avatar_url: string;
-  }
+  avatar_url: string;
+  login: string;
+  public_repos: number;
+  followers: number;
+  following: number;
 }
 
 interface Issue {
@@ -31,9 +27,7 @@ interface Issue {
 }
 
 const Profile: React.FC = () => {
-  const [repository, setRepository] = useState<Repository | null>(null);
-
-   const [profileData] = useState<Repository | void>(() => {
+   const [profileData] = useState<Repository>(() => {
     const localData = localStorage.getItem('userData');
 
     if(localData) {
@@ -43,19 +37,35 @@ const Profile: React.FC = () => {
     return [];
   });
 
+
   return (
     <>
     <Header>
       <Link to="/">
       <img src={logo} alt="git logo" />
-
       </Link>
 
       <Link to="/">
+        <FiChevronLeft />
         Voltar
       </Link>
     </Header>
-    <p>Search</p>
+
+    <RepositoryInfo>
+      <div>
+        <img src={profileData.avatar_url} alt="Profile avatar" />
+        <h3>{profileData.name}</h3>
+      </div>
+
+
+      <ul>
+        <li>Repositories: <span>{profileData.public_repos}</span></li>
+        <li>Followers: <span>{profileData.followers}</span></li>
+        <li>Following: <span>{profileData.following}</span></li>
+        <li>user name: <span>{profileData.login}</span></li>
+      </ul>
+
+    </RepositoryInfo>
 
     </>
   )
