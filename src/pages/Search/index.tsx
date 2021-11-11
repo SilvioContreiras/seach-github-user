@@ -70,7 +70,7 @@ const history = useHistory();
           />
           <button type="submit">Pesquisar</button>
         </div>
-        {error && <p className="notFound">Usuário não encontrado</p>}
+        {error && <p>Usuário não encontrado</p>}
       </Form>
     </>
   )
