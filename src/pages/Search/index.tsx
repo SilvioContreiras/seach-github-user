@@ -19,6 +19,7 @@ interface Repository {
 
 const Search: React.FC = () => {
 const [userName, setUserName] = useState('');
+const [error, setError] = useState<string | null>('');
 const history = useHistory();
 
   const [profileData, setProfileData] = useState<Repository | void>(() => {
@@ -45,25 +46,32 @@ const history = useHistory();
           setProfileData(response.data);
           setUserName("");
 
-          history.push('/profile')
+          history.push('/profile');
+
         }
       })
 
     } catch (err) {
+      setError('user not found');
       console.info(err);
     }
   }
+
+  console.log(error);
 
   return (
     <>
       <Title>Github finder</Title>
       <Form onSubmit={handleSearch}>
-        <input
-          value={userName}
-          onChange={e => setUserName(e.target.value)}
-          placeholder="Enter the username"
-        />
-        <button type="submit">Pesquisar</button>
+        <div>
+          <input
+            value={userName}
+            onChange={e => setUserName(e.target.value)}
+            placeholder="Enter the username"
+          />
+          <button type="submit">Pesquisar</button>
+        </div>
+        {error && <p className="notFound">Usuário não encontrado</p>}
       </Form>
     </>
   )
