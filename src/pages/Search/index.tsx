@@ -57,12 +57,11 @@ const history = useHistory();
     }
   }
 
-  console.log(error);
 
   return (
     <>
       <Title>Github finder</Title>
-      <Form onSubmit={handleSearch}>
+      <Form hasError={!!error} onSubmit={handleSearch}>
         <div>
           <input
             value={userName}
